@@ -32,7 +32,7 @@ function solution(n, a) {
     var lastMax = 0, max = 0;
     var counter = '0'.repeat(n).split('');
 
-    a.forEach(k => {
+    a.forEach(k, i => {
 
         i = k -  1;
 
