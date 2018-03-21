@@ -1,0 +1,33 @@
+/**
+ * Created by dohee.seong on 2018. 3. 21..
+ *
+ * https://app.codility.com/programmers/lessons/7-stacks_and_queues/nesting/start/
+ *
+ * N 개의 문자로 구성된 문자열 S가 주어지면 S가 제대로 중첩되면 1을, 그렇지 않으면 0을 반환합니다.
+ * 예를 들어 S = "(()(()))"이면 함수는 1을 반환하고 S = "())"이면 위에서 설명한 것처럼 0을 반환해야합니다.
+ *
+ */
+function solution(S) {
+
+    var arr = S.split('');
+
+    var open = 0;
+    var result = 1;
+
+    for (var i = 0; i < arr.length; ++i){
+
+        if (arr[i] === '(') ++open;
+        else{
+            --open;
+            if (open < 0){
+                result = 0;
+                break;
+            }
+
+        }
+
+    }
+
+    return open === 0 ? result : 0;
+
+}
